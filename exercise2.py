@@ -7,7 +7,7 @@ Created on Feb 1, 2018
 import time
 import sys
 import random
-from psychopy import visual,event,core,gui
+from psychopy import visual,event,core #,gui
 
 
 names = open('names.txt', 'r').readlines()
