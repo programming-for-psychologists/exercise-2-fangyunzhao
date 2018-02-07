@@ -1,7 +1,7 @@
 '''
-Created on Feb 1, 2018
+Created on Feb 7, 2018
 
-@author: Olivia Zhao
+@author: fangyunzhao
 '''
 
 import time
@@ -34,7 +34,7 @@ while True:
     win.flip()
     core.wait(.75)
     win.flip()
-    #core.wait(.15)
+
 
     if event.getKeys(['q']):
         break
