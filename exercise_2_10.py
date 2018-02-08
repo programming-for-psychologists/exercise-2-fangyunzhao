@@ -67,6 +67,7 @@ while True:
     ans = int(res == rightR)
     
     output.write(str(ans) + '\t' + str(t) + '\n')
+    output.flush()
     
     if event.getKeys('q'):
         output.close()
