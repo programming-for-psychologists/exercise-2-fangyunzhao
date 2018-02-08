@@ -8,6 +8,8 @@ import time
 import sys
 import random
 from psychopy import visual, event, core, gui
+from backports.configparser.helpers import str
+from pandocfilters import Str
 
 def popupError(text):
     errorDlg = gui.Dlg(title="Error", pos=(200,400))
@@ -16,6 +18,7 @@ def popupError(text):
     
 
 names = open('names.txt', 'r').readlines()
+output = open('output.txt', 'w')
 firstNames = [name.split(' ')[0] for name in names] 
 firstNames = [name.lower() for name in firstNames]
 
@@ -61,10 +64,11 @@ while True:
         wrongStim.draw()
         win.flip()
         core.wait(.5)
-    ans = [res == rightR]
+    ans = int(res == rightR)
     
-    print t, res, ans
+    output.write(str(ans) + '\t' + str(t) + '\n')
     
     if event.getKeys('q'):
+        output.close()
         break
 
